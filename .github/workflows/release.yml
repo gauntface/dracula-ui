@@ -44,16 +44,21 @@ jobs:
         cp README.md release/
         cd build && cp -r . ../release/
 
-    - name: Create release on GitHub 📦
-      uses: ncipollo/release-action@v1
-      with:
-        tag: v${{ inputs.version }}
-        artifacts: "release/**/*"
-        generateReleaseNotes: true
-
     - name: Publish package on NPM 📦
       run: |
         cd release
         npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    - name: Create tar for GitHub release 🤐
+      run: |
+        cd release
+        tar -zcvf styles.tar.gz styles/
+
+    - name: Create release on GitHub 📦
+      uses: ncipollo/release-action@v1
+      with:
+        tag: v${{ inputs.version }}
+        artifacts: "release/*"
+        generateReleaseNotes: true
