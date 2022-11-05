@@ -32,9 +32,8 @@ jobs:
       run: npm run build
 
     - name: Update package.json ⬆️
-      run: npm version ${{ inputs.version }} --no-git-tag-version
       # In case the version remains the same (i.e. re-run a failed release)
-      continue-on-error: true
+      run: npm version ${{ inputs.version }} --no-git-tag-version || true
     - name: Commit any package.json changes 📌
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
