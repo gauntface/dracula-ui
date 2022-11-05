@@ -14,7 +14,8 @@ async function generateCSS(outdir, name, size, cssfn, opts) {
 }
 
 export default async function generate(outdir, name, cssfn, opts = {}) {
-  const bgdir = path.join(outdir, name);
+  const dirname = opts.dir || name;
+  const bgdir = path.join(outdir, dirname);
   await mkdir(bgdir, {
     recursive: true,
   });
