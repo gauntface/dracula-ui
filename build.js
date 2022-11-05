@@ -27,6 +27,8 @@ const generators = [
   // Input
   (d) => gencolorvariants(d, 'input', (color) => {
     return `--input-border-color: var(--${color});`;
+  }, {
+    state: ':focus'
   }),
 
   // List

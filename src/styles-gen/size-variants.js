@@ -6,7 +6,7 @@ const SIZES = ['none', 'xxs', 'xs', 'sm', 'md', 'lg'];
 async function generateCSS(outdir, name, size, cssfn, opts) {
   const selector = `drac-${name}-${size}${opts.suffix || ''}`
   const rules = cssfn(size);
-  const css = `.${selector} ${opts.selector || ''} {
+  const css = `.${selector}${opts.state || ''} ${opts.selector || ''} {
   ${rules}
 }
 `;
