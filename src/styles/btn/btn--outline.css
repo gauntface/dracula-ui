@@ -1,0 +1,15 @@
+.btn--outline {
+    border-width: var(--border-size);
+    border-style: solid;
+    background-color: transparent;
+  }
+  
+  .btn--outline:disabled {
+    background-color: transparent;
+    border-color: var(--disabled);
+    color: var(--disabled);
+  }
+  
+  .btn--outline:disabled .text {
+    color: var(--disabled);
+  }
