@@ -1,0 +1,18 @@
+.list--ordered {
+  counter-reset: li;
+}
+
+.list--ordered li {
+  counter-increment: li;
+  margin-left: -30px;
+}
+
+.list--ordered li::before {
+  content: counter(li, var(--type, decimal))'.';
+  display: inline-block;
+  margin-left: 15px;
+  padding-right: 5px;
+  text-align: right;
+  width: 30px;
+  color: var(--accentColor);
+}

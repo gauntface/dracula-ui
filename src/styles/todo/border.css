@@ -1,0 +1,48 @@
+@each $color in black, grey, white, cyan, green, orange, pink, purple, red, yellow {
+    .border-$(color) {
+      border-color: var(--$(color));
+      --borderColor: var(--$(color));
+    }
+}
+
+@each $color in black, white, cyan, green, orange, pink, purple, red, yellow {
+  .border-$(color) {
+    border-color: var(--$(color));
+  }
+}
+
+.rounded-none {
+  border-radius: var(--rounded-none);
+}
+
+.rounded-sm {
+  border-radius: var(--rounded-sm);
+}
+
+.rounded {
+  border-radius: var(--rounded);
+}
+
+.rounded-md {
+  border-radius: var(--rounded-md);
+}
+
+.rounded-lg {
+  border-radius: var(--rounded-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--rounded-xl);
+}
+
+.rounded-2xl {
+  border-radius: var(--rounded-2xl);
+}
+
+.rounded-3xl {
+  border-radius: var(--rounded-3xl);
+}
+
+.rounded-full {
+  border-radius: var(--rounded-full);
+}

@@ -1,0 +1,80 @@
+.radio-black,
+.switch-black,
+.checkbox-black {
+  --active: var(--black);
+  --focus: var(--blackSecondary);
+  --border: var(--blackSecondary);
+  --border-hover: var(--black);
+}
+
+.radio-white,
+.switch-white,
+.checkbox-white {
+  --active: var(--white);
+  --focus: var(--whiteSecondary);
+  --border: var(--whiteSecondary);
+  --border-hover: var(--white);
+}
+
+.radio-cyan,
+.switch-cyan,
+.checkbox-cyan {
+  --active: var(--cyan);
+  --focus: var(--cyanSecondary);
+  --border: var(--cyanSecondary);
+  --border-hover: var(--cyan);
+}
+
+.radio-green,
+.switch-green,
+.checkbox-green {
+  --active: var(--green);
+  --focus: var(--greenSecondary);
+  --border: var(--greenSecondary);
+  --border-hover: var(--green);
+}
+
+.radio-orange,
+.switch-orange,
+.checkbox-orange {
+  --active: var(--orange);
+  --focus: var(--orangeSecondary);
+  --border: var(--orangeSecondary);
+  --border-hover: var(--orange);
+}
+
+.radio-pink,
+.switch-pink,
+.checkbox-pink {
+  --active: var(--pink);
+  --focus: var(--pinkSecondary);
+  --border: var(--pinkSecondary);
+  --border-hover: var(--pink);
+}
+
+.radio-purple,
+.switch-purple,
+.checkbox-purple {
+  --active: var(--purple);
+  --focus: var(--purpleSecondary);
+  --border: var(--purpleSecondary);
+  --border-hover: var(--purple);
+}
+
+.radio-red,
+.switch-red,
+.checkbox-red {
+  --active: var(--red);
+  --focus: var(--redSecondary);
+  --border: var(--redSecondary);
+  --border-hover: var(--red);
+}
+
+.radio-yellow,
+.switch-yellow,
+.checkbox-yellow {
+  --active: var(--yellow);
+  --focus: var(--yellowSecondary);
+  --border: var(--yellowSecondary);
+  --border-hover: var(--yellow);
+}
