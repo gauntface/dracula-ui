@@ -1,48 +1,48 @@
 @each $color in black, grey, white, cyan, green, orange, pink, purple, red, yellow {
-    .border-$(color) {
+    .drac-border-$(color) {
       border-color: var(--$(color));
       --borderColor: var(--$(color));
     }
 }
 
 @each $color in black, white, cyan, green, orange, pink, purple, red, yellow {
-  .border-$(color) {
+  .drac-border-$(color) {
     border-color: var(--$(color));
   }
 }
 
-.rounded-none {
+.drac-rounded-none {
   border-radius: var(--rounded-none);
 }
 
-.rounded-sm {
+.drac-rounded-sm {
   border-radius: var(--rounded-sm);
 }
 
-.rounded {
+.drac-rounded {
   border-radius: var(--rounded);
 }
 
-.rounded-md {
+.drac-rounded-md {
   border-radius: var(--rounded-md);
 }
 
-.rounded-lg {
+.drac-rounded-lg {
   border-radius: var(--rounded-lg);
 }
 
-.rounded-xl {
+.drac-rounded-xl {
   border-radius: var(--rounded-xl);
 }
 
-.rounded-2xl {
+.drac-rounded-2xl {
   border-radius: var(--rounded-2xl);
 }
 
-.rounded-3xl {
+.drac-rounded-3xl {
   border-radius: var(--rounded-3xl);
 }
 
-.rounded-full {
+.drac-rounded-full {
   border-radius: var(--rounded-full);
 }

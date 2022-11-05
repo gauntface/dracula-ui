@@ -1,4 +1,4 @@
-.input {
+.drac-input {
   --input-border-color: var(--white);
 
     border-radius: var(--rounded-lg);
@@ -13,11 +13,11 @@
     height: var(--spacing-10);
     font-size: var(--font-md);
   }
-  
-  .input:focus {
+
+  .drac-input:focus {
     border-color: var(--input-border-color);
   }
-  
-  .input::placeholder {
+
+  .drac-input::placeholder {
     color: var(--blackTernary);
   }

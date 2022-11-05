@@ -1,11 +1,11 @@
-.box {
+.drac-box {
   box-sizing: border-box;
 }
 
-.box h1,
-.box h2,
-.box h3,
-.box h4 {
+.drac-box h1,
+.drac-box h2,
+.drac-box h3,
+.drac-box h4 {
   margin: 0;
 }
 

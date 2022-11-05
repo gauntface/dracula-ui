@@ -1,6 +1,6 @@
 
 @each $from, $to in (purple, yellow, cyan, pink), (cyan, pink, green, purple) {
-  .bg-$(from)-$(to) {
+  .drac-bg-$(from)-$(to) {
     background: linear-gradient(
       var(--gradientDegree),
       var(--$(from)) 0%,
@@ -8,7 +8,7 @@
     );
   }
 
-  .bg-$(from)-$(to)-transparent {
+  .drac-bg-$(from)-$(to)-transparent {
     background: linear-gradient(
       var(--gradientDegree),
       var(--$(from)-transparent) 0%,
@@ -16,18 +16,18 @@
     );
   }
 }
-  
+
 @each $color in black, grey, white, cyan, green, orange, pink, purple, red, yellow {
-  .bg-$(color) {
+  .drac-bg-$(color) {
     background-color: var(--$(color));
   }
 
-  .bg-$(color)-secondary {
+  .drac-bg-$(color)-secondary {
     --accentColor: var(--$(color)Secondary);
     background-color: var(--$(color)Secondary);
   }
 
-  .bg-$(color)-transparent {
+  .drac-bg-$(color)-transparent {
     --accentColor: var(--$(color)-transparent);
     background-color: var(--$(color)-transparent);
   }

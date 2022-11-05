@@ -1,8 +1,8 @@
-.checkbox {
+.drac-checkbox {
   border-radius: 7px;
 }
 
-.checkbox:after {
+.drac-checkbox:after {
   width: 5px;
   height: 9px;
   border: 2px solid var(--black);
@@ -13,7 +13,7 @@
   transform: rotate(var(--local-rotation, 20deg));
 }
 
-.checkbox:checked {
+.drac-checkbox:checked {
   background: var(--local-bg, var(--background));
   --local-rotation: 43deg;
 }

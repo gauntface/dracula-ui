@@ -1,19 +1,19 @@
-.btn--ghost:not(:disabled):hover {
+.drac-btn--ghost:not(:disabled):hover {
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: none;
   }
-  
-  .btn--ghost:active,
-  .btn--ghost:focus {
+
+  .drac-btn--ghost:active,
+  .drac-btn--ghost:focus {
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: none;
   }
-  
-  .btn--ghost:disabled {
+
+  .drac-btn--ghost:disabled {
     background-color: var(--disabled);
     color: var(--black);
   }
-  
-  .btn--ghost:disabled .text {
+
+  .drac-btn--ghost:disabled .drac-text {
     color: var(--black);
   }

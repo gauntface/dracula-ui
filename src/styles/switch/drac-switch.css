@@ -1,9 +1,9 @@
-.switch {
+.drac-switch {
   width: 38px;
   border-radius: 11px;
 }
 
-.switch:after {
+.drac-switch:after {
   left: 2px;
   top: 2px;
   border-radius: 50%;
@@ -13,12 +13,12 @@
   transform: translateX(var(--x, 0));
 }
 
-.switch:checked {
+.drac-switch:checked {
   background: none;
   --ab: var(--active);
   --x: 17px;
 }
 
-.switch:disabled:not(:checked):after {
+.drac-switch:disabled:not(:checked):after {
   opacity: 0.6;
 }
