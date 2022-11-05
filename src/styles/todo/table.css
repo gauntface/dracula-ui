@@ -1,0 +1,10 @@
+@each $color in black, white, cyan, green, orange, pink, purple, red, yellow {
+
+  .table.table-$(color) td {
+    border-color: var(--$(color));
+  }
+
+  .table-striped.table-$(color) tr:nth-child(even) {
+    background-color: var(--$(color)Light);
+  }
+}

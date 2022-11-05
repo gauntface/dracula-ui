@@ -1,0 +1,57 @@
+.select-outline.select-black,
+.select-outline.select-black:focus,
+.select.select-black:focus {
+  border-color: var(--black);
+}
+.select-outline.select-white,
+.select-outline.select-white:focus,
+.select.select-white:focus {
+  border-color: var(--white);
+}
+.select-outline.select-cyan,
+.select-outline.select-cyan:focus,
+.select.select-cyan:focus {
+  border-color: var(--cyan);
+}
+.select-outline.select-green,
+.select-outline.select-green:focus,
+.select.select-green:focus {
+  border-color: var(--green);
+}
+.select-outline.select-orange,
+.select-outline.select-orange:focus,
+.select.select-orange:focus {
+  border-color: var(--orange);
+}
+.select-outline.select-pink,
+.select-outline.select-pink:focus,
+.select.select-pink:focus {
+  border-color: var(--pink);
+}
+.select-outline.select-purple,
+.select-outline.select-purple:focus,
+.select.select-purple:focus {
+  border-color: var(--purple);
+}
+.select-outline.select-red,
+.select-outline.select-red:focus,
+.select.select-red:focus {
+  border-color: var(--red);
+}
+.select-outline.select-yellow,
+.select-outline.select-yellow:focus,
+.select.select-yellow:focus {
+  border-color: var(--yellow);
+}
+
+/* Sizes */
+
+.select.select-sm {
+  height: var(--spacing-8);
+  font-size: var(--font-sm);
+}
+
+.select.select-lg {
+  height: var(--spacing-12);
+  font-size: var(--font-lg);
+}

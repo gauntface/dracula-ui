@@ -1,0 +1,19 @@
+.checkbox {
+  border-radius: 7px;
+}
+
+.checkbox:after {
+  width: 5px;
+  height: 9px;
+  border: 2px solid var(--black);
+  border-top: 0;
+  border-left: 0;
+  left: 6px;
+  top: 2px;
+  transform: rotate(var(--local-rotation, 20deg));
+}
+
+.checkbox:checked {
+  background: var(--local-bg, var(--background));
+  --local-rotation: 43deg;
+}

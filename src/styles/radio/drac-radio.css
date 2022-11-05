@@ -1,0 +1,20 @@
+.radio {
+  border-radius: 50%;
+}
+
+.radio:after {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--local-bg-color);
+  opacity: 0;
+  transform: scale(var(--scale));
+}
+
+.radio:checked {
+  --scale: 0.8;
+}
+
+.radio:disabled:checked:after {
+  background: var(--disabled-inner);
+}

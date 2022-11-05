@@ -1,7 +1,0 @@
-{
-  "name": "with-jekyll",
-  "private": true,
-  "dependencies": {
-    "dracula-ui": "*"
-  }
-}

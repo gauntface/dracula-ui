@@ -1,0 +1,5 @@
+
+.badge--subtle {
+  border-width: var(--border-size);
+  border-style: solid;
+}

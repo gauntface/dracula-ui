@@ -1,0 +1,72 @@
+.toggle {
+  --active-inner: var(--white);
+  --background: var(--white);
+  --disabled: var(--blackSecondary);
+  --disabled-inner: var(--blackTernary);
+  --local-bg-color: var(--border-hover);
+
+  appearance: none;
+  height: 21px;
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid var(--local-bg-color, var(--border));
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+
+.toggle:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  position: absolute;
+  opacity: var(--local-opacity, 0);
+  transition: transform var(--local-transform-speed, 0.3s)
+      var(--local-transform-effect, ease),
+      opacity var(--local-opacity-speed, 0.2s);
+}
+
+.toggle:checked,
+.toggle:checked {
+  --local-bg: var(--active);
+  --local-bg-color: var(--active);
+  --local-opacity-speed: 0.3s;
+  --local-transform-speed: 0.6s;
+  --local-transform-effect: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  --local-opacity: 1;
+}
+
+.toggle:disabled {
+  --local-bg: var(--disabled);
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.toggle:disabled:checked {
+  --local-bg: var(--disabled-inner);
+  --local-bg-color: var(--border);
+}
+
+.toggle + label {
+  font-size: 14px;
+  line-height: 21px;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.toggle:disabled + label {
+  cursor: not-allowed;
+}
+
+.toggle:focus {
+  box-shadow: 0 0 0 var(--focus);
+}
+
+.toggle:not(.switch) {
+  width: 21px;
+}

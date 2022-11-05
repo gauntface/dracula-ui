@@ -1,0 +1,13 @@
+.select--outline {
+  background: transparent;
+  border-color: var(--blackTernary);
+}
+
+.select-outline:disabled {
+  color: var(--white);
+}
+
+.select--outline:disabled + .select_arrow {
+  color: var(--white);
+  opacity: 0.5;
+}
