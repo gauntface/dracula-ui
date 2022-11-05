@@ -36,10 +36,17 @@ jobs:
         commit_message: "Releasing ${{ inputs.version }}"
         file_pattern: 'package.json'
 
+    - name: Create Release Directory
+      run: |
+        mkdir release
+        cp LICENSE release/
+        cp package.json release/
+        cd build && cp -r . ../release/
+
     - name: GitHub Release
       uses: ncipollo/release-action@v1
       with:
         tag: v${{ inputs.version }}
-        artifacts: LICENSE,package.json,build/
-        generateReleaseNotes: true,
+        artifacts: "release/**/*"
+        generateReleaseNotes: true
 
