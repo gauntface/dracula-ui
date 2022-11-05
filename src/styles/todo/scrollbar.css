@@ -1,9 +1,0 @@
-@each $color in grey, cyan, green, orange, pink, purple, red, yellow {
-  .drac-scrollbar-$(color) {
-    --drac-scrollbar-bg: transparent;
-    --drac-scrollbar-border: var(--$(color)Light);
-    --drac-scrollbar-thumb: var(--$(color));
-    --drac-scrollbar-thumb-hover: var(--$(color)Secondary);
-    overflow: auto;
-  }
-}

@@ -1,36 +1,36 @@
 .drac-tabs {
-  border-bottom: 1px solid var(--disabled);
-  display: inline-flex;
-  list-style: none;
-  padding: 0;
+	border-bottom: 1px solid var(--disabled);
+	display: inline-flex;
+	list-style: none;
+	padding: 0;
 }
 
 .drac-tab {
-  padding: var(--spacing-sm) 0;
-  position: relative;
-  transition: all .2s ease-in-out;
+	padding: var(--spacing-sm) 0;
+	position: relative;
+	transition: all 0.2s ease-in-out;
 }
 
-.drac-tab:after {
-  background: transparent;
-  bottom: -1px;
-  content: '';
-  height: 2px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  transform: scaleX(0.75);
-  transition: all .2s ease-in-out;
-  width: 100%;
+.drac-tab::after {
+	background: transparent;
+	bottom: -1px;
+	content: "";
+	height: 2px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	transform: scaleX(0.75);
+	transition: all 0.2s ease-in-out;
+	width: 100%;
 }
 
 .drac-tab__link {
-  color: var(--disabled);
-  padding: var(--spacing-sm);
-  text-decoration: none;
-  transition: color .2s ease-in-out;
+	color: var(--disabled);
+	padding: var(--spacing-sm);
+	text-decoration: none;
+	transition: color 0.2s ease-in-out;
 }
 
 .drac-tab:hover .drac-tab__link {
-  color: var(--white);
+	color: var(--white);
 }

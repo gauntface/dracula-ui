@@ -1,5 +1,4 @@
-
 .drac-badge--subtle {
-  border-width: var(--border-size);
-  border-style: solid;
+	border-width: var(--border-size);
+	border-style: solid;
 }

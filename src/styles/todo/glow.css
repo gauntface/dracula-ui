@@ -1,6 +1,0 @@
-@each $color in black, grey, white, cyan, green, orange, pink, purple, red, yellow {
-    .glow-$(color) {
-      background-color: var(--$(color));
-      --glowColor: var(--$(color));
-    }
-}

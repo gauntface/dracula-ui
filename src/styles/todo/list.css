@@ -1,5 +1,0 @@
-@each $color in black, blackSecondary, white, cyan, green, orange, pink, purple, red, yellow {
-  .drac-list-$(color) li::before {
-    color: var(--$(color));
-  }
-}

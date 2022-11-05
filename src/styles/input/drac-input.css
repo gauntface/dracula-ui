@@ -1,23 +1,22 @@
 .drac-input {
-  --input-border-color: var(--white);
+	--input-border-color: var(--white);
 
-    border-radius: var(--rounded-lg);
-    box-sizing: border-box;
-    width: 100%;
-    outline: none;
-    background: var(--blackSecondary);
-    border: 0.3rem solid transparent;
-    transition: 0.3s ease-in-out all;
+	border-radius: var(--rounded-lg);
+	box-sizing: border-box;
+	width: 100%;
+	outline: none;
+	background: var(--black-secondary);
+	border: 0.3rem solid transparent;
+	transition: 0.3s ease-in-out all;
+	padding: 0 var(--spacing-4);
+	height: var(--spacing-10);
+	font-size: var(--font-md);
+}
 
-    padding: 0 var(--spacing-4);
-    height: var(--spacing-10);
-    font-size: var(--font-md);
-  }
+.drac-input:focus {
+	border-color: var(--input-border-color);
+}
 
-  .drac-input:focus {
-    border-color: var(--input-border-color);
-  }
-
-  .drac-input::placeholder {
-    color: var(--blackTernary);
-  }
+.drac-input::placeholder {
+	color: var(--black-ternary);
+}

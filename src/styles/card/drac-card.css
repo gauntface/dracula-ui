@@ -1,5 +1,5 @@
 .drac-card {
-    border-radius: var(--rounded-lg);
-    box-shadow: -2px var(--glow-spacing-x) var(--glow-spacing-y) var(--glowColor);
-    background-color: var(--accentColor);
-  }
+	border-radius: var(--rounded-lg);
+	box-shadow: -2px var(--glow-spacing-x) var(--glow-spacing-y) var(--glow-color);
+	background-color: var(--accent-color);
+}

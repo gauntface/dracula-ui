@@ -5,6 +5,13 @@
   "repository": "gauntface/dracula-ui",
   "license": "MIT",
   "author": "Netto Farah & Zeno Rocha & Matt Gaunt-Seo",
-  "devDependencies": {},
-  "dependencies": {}
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "lint": "npx stylelint '**/*.css' --fix"
+  },
+  "devDependencies": {
+    "stylelint": "^14.14.1",
+    "stylelint-config-standard": "^29.0.0"
+  }
 }
