@@ -4,9 +4,9 @@ import {writeFile, mkdir} from 'node:fs/promises';
 const SIZES = ['none', 'xxs', 'xs', 'sm', 'md', 'lg'];
 
 async function generateCSS(outdir, name, size, cssfn, opts) {
-  const selector = `drac-${name}-${size}`
+  const selector = `drac-${name}-${size}${opts.suffix || ''}`
   const rules = cssfn(size);
-  const css = `.${selector}${opts.suffix || ''} ${opts.selector || ''} {
+  const css = `.${selector} ${opts.selector || ''} {
   ${rules}
 }
 `;
