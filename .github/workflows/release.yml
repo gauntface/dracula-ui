@@ -20,6 +20,8 @@ jobs:
       with:
         submodules: true
     - uses: actions/setup-node@v3
+      with:
+        registry-url: https://registry.npmjs.org/
 
     # Install dependencies
     - name: Install NPM Deps 🌎
