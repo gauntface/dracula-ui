@@ -49,7 +49,9 @@ jobs:
         cd build && cp -r . ../release/
 
     - name: Create tar for GitHub release 🤐
-      run: tar -zcvf dracula-ui-v${{ inputs.version }}.tar.gz release/
+      run: |
+        cd release
+        tar -zcvf ../dracula-ui-v${{ inputs.version }}.tar.gz .
 
     - name: Create release on GitHub 📦
       uses: ncipollo/release-action@v1
