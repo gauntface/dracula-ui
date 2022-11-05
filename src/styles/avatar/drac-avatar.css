@@ -1,5 +1,5 @@
 /** Defines an avatar */
-.avatar {
+.drac-avatar {
   --subtle-avatar-shadow: inset 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
   --avatar-border: 1px;
 
@@ -18,7 +18,7 @@
   align-items: center;
 }
 
-.avatar__background {
+.drac-avatar__background {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -31,7 +31,7 @@
   width: 100%;
 }
 
-.avatar .text {
+.drac-avatar .drac-text {
   text-transform: uppercase;
 
   /* Fira code is adding 1px to the bottom of the span */

@@ -1,4 +1,4 @@
-.toggle {
+.drac-toggle {
   --active-inner: var(--white);
   --background: var(--white);
   --disabled: var(--blackSecondary);
@@ -17,7 +17,7 @@
   transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
 }
 
-.toggle:after {
+.drac-toggle:after {
   content: '';
   display: block;
   left: 0;
@@ -29,8 +29,8 @@
       opacity var(--local-opacity-speed, 0.2s);
 }
 
-.toggle:checked,
-.toggle:checked {
+.drac-toggle:checked,
+.drac-toggle:checked {
   --local-bg: var(--active);
   --local-bg-color: var(--active);
   --local-opacity-speed: 0.3s;
@@ -39,18 +39,18 @@
   --local-opacity: 1;
 }
 
-.toggle:disabled {
+.drac-toggle:disabled {
   --local-bg: var(--disabled);
   cursor: not-allowed;
   opacity: 0.9;
 }
 
-.toggle:disabled:checked {
+.drac-toggle:disabled:checked {
   --local-bg: var(--disabled-inner);
   --local-bg-color: var(--border);
 }
 
-.toggle + label {
+.drac-toggle + label {
   font-size: 14px;
   line-height: 21px;
   display: inline-block;
@@ -59,14 +59,14 @@
   margin-left: 4px;
 }
 
-.toggle:disabled + label {
+.drac-toggle:disabled + label {
   cursor: not-allowed;
 }
 
-.toggle:focus {
+.drac-toggle:focus {
   box-shadow: 0 0 0 var(--focus);
 }
 
-.toggle:not(.switch) {
+.drac-toggle:not(.drac-switch) {
   width: 21px;
 }

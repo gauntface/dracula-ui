@@ -1,12 +1,12 @@
 
 
 @each $color in black, white, cyan, green, orange, pink, purple, red, yellow {
-  .tabs-$(color) .tab-active:after {
+  .drac-tabs-$(color) .drac-tab-active:after {
     background: var(--$(color));
     transform: scaleX(1);
   }
 
-  .tabs-$(color) .tab-active .tab-link {
+  .drac-tabs-$(color) .drac-tab-active .drac-tab-link {
     color: var(--$(color));
   }
 }

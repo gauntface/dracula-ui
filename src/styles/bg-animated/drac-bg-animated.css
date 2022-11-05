@@ -1,4 +1,4 @@
-.bg-animated {
+.drac-bg-animated {
   content: '';
   animation: animatedGradient 6s ease infinite alternate;
   background-size: 300% 300%;

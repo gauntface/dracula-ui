@@ -1,8 +1,8 @@
-.radio {
+.drac-radio {
   border-radius: 50%;
 }
 
-.radio:after {
+.drac-radio:after {
   width: 19px;
   height: 19px;
   border-radius: 50%;
@@ -11,10 +11,10 @@
   transform: scale(var(--scale));
 }
 
-.radio:checked {
+.drac-radio:checked {
   --scale: 0.8;
 }
 
-.radio:disabled:checked:after {
+.drac-radio:disabled:checked:after {
   background: var(--disabled-inner);
 }

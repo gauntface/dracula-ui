@@ -1,5 +1,5 @@
 @each $color in grey, cyan, green, orange, pink, purple, red, yellow {
-  .scrollbar-$(color) {
+  .drac-scrollbar-$(color) {
     --drac-scrollbar-bg: transparent;
     --drac-scrollbar-border: var(--$(color)Light);
     --drac-scrollbar-thumb: var(--$(color));

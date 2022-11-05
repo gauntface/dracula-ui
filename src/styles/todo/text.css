@@ -1,15 +1,15 @@
 @each $color in black, white, cyan, green, orange, pink, purple, red, yellow {
-    .text-$(color)--hover:hover {
+    .drac-text-$(color)--hover:hover {
         color: var(--$(color));
     }
 
-    .text-$(color)-secondary--hover:hover {
+    .drac-text-$(color)-secondary--hover:hover {
         color: var(--$(color)Secondary);
     }
 }
 
 @each $from, $to in (purple, yellow, cyan, pink), (cyan, pink,  green, purple) {
-    .text-$(from)-$(to)--hover:hover {
+    .drac-text-$(from)-$(to)--hover:hover {
         background-image: linear-gradient(
         var(--gradientDegree),
         var(--$(from)) 0%,
@@ -22,24 +22,24 @@
 }
 
 @each $from, $to in (purple, yellow, cyan, pink), (cyan, pink, green, purple) {
-    .text-$(from)-$(to) {
+    .drac-text-$(from)-$(to) {
       background-image: linear-gradient(
         var(--gradientDegree),
         var(--$(from)) 0%,
         var(--$(to)) 100%
       );
-  
+
       background-size: 100%;
       background-clip: text;
     }
 }
 
 @each $color in black, grey, white, cyan, green, orange, pink, purple, red, yellow {
-    .text-$(color) {
+    .drac-text-$(color) {
       color: var(--$(color));
     }
-  
-    .text-$(color)-secondary {
+
+    .drac-text-$(color)-secondary {
       color: var(--$(color)Secondary);
     }
 }

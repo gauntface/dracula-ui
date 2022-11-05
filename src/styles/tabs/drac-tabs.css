@@ -1,17 +1,17 @@
-.tabs {
+.drac-tabs {
   border-bottom: 1px solid var(--disabled);
   display: inline-flex;
   list-style: none;
   padding: 0;
 }
 
-.tab {
+.drac-tab {
   padding: var(--spacing-sm) 0;
   position: relative;
   transition: all .2s ease-in-out;
 }
 
-.tab:after {
+.drac-tab:after {
   background: transparent;
   bottom: -1px;
   content: '';
@@ -24,13 +24,13 @@
   width: 100%;
 }
 
-.tab__link {
+.drac-tab__link {
   color: var(--disabled);
   padding: var(--spacing-sm);
   text-decoration: none;
   transition: color .2s ease-in-out;
 }
 
-.tab:hover .tab__link {
+.drac-tab:hover .drac-tab__link {
   color: var(--white);
 }

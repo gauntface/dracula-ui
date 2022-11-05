@@ -1,4 +1,4 @@
-.btn {
+.drac-btn {
   appearance: none;
   border: none;
   border-radius: var(--rounded-lg);
@@ -15,24 +15,24 @@
   font-size: var(--font-md);
 }
 
-.btn:active,
-.btn:focus {
+.drac-btn:active,
+.drac-btn:focus {
   opacity: 0.75;
   box-shadow: -4px -4px 1px rgba(255, 255, 255, 0.3) inset;
   outline: 0;
 }
 
-.btn:disabled {
+.drac-btn:disabled {
   background-color: var(--disabled);
   cursor: not-allowed;
   color: var(--black);
 }
 
-.btn:not(:disabled):hover {
+.drac-btn:not(:disabled):hover {
   opacity: 0.75;
   box-shadow: 4px 4px rgba(255, 255, 255, 0.1);
 }
 
-.btn:not(:disabled):disabled:hover {
+.drac-btn:not(:disabled):disabled:hover {
   box-shadow: none;
 }
