@@ -1,4 +1,4 @@
-import { mkdir, rm, cp } from 'node:fs/promises';
+import { mkdir, rm, cp, stat } from 'node:fs/promises';
 import * as path from 'path';
 import gencolors from './src/styles-gen/colors.js';
 import gendisplay from './src/styles-gen/drac-d.js';
@@ -54,6 +54,7 @@ overflow: auto;`;
   (d) => gencolorvariants(d, 'table-striped', (color) => {
     return `background-color: var(--${color}-light);`;
   }, {
+    dir: 'table',
     selector: 'tr:nth-child(even)',
   }),
 
@@ -160,61 +161,93 @@ overflow: auto;`;
   // Padding
   (d) => gensizevariants(d, 'p', (size) => {
     return `padding: var(--spacing-${size});`;
+  }, {
+    dir: 'padding',
   }),
   (d) => gensizevariants(d, 'px', (size) => {
     return `padding-left: var(--spacing-${size});
     padding-right: var(--spacing-${size});`;
+  }, {
+    dir: 'padding',
   }),
   (d) => gensizevariants(d, 'py', (size) => {
     return `padding-top: var(--spacing-${size});
     padding-bottom: var(--spacing-${size});`;
+  }, {
+    dir: 'padding',
   }),
   (d) => gensizevariants(d, 'pl', (size) => {
     return `padding-left: var(--spacing-${size});`;
+  }, {
+    dir: 'padding',
   }),
   (d) => gensizevariants(d, 'pr', (size) => {
     return `padding-right: var(--spacing-${size});`;
+  }, {
+    dir: 'padding',
   }),
   (d) => gensizevariants(d, 'pt', (size) => {
     return `padding-top: var(--spacing-${size});`;
+  }, {
+    dir: 'padding',
   }),
   (d) => gensizevariants(d, 'pb', (size) => {
     return `padding-bottom: var(--spacing-${size});`;
+  }, {
+    dir: 'padding',
   }),
 
   // Margin
   (d) => gensizevariants(d, 'm', (size) => {
     return `margin: var(--spacing-${size});`;
+  }, {
+    dir: 'margin',
   }),
   (d) => gensizevariants(d, 'mx', (size) => {
     return `margin-left: var(--spacing-${size});
     margin-right: var(--spacing-${size});`;
+  }, {
+    dir: 'margin',
   }),
   (d) => gensizevariants(d, 'my', (size) => {
     return `margin-top: var(--spacing-${size});
     margin-bottom: var(--spacing-${size});`;
+  }, {
+    dir: 'margin',
   }),
   (d) => gensizevariants(d, 'ml', (size) => {
     return `margin-left: var(--spacing-${size});`;
+  }, {
+    dir: 'margin',
   }),
   (d) => gensizevariants(d, 'mr', (size) => {
     return `margin-right: var(--spacing-${size});`;
+  }, {
+    dir: 'margin',
   }),
   (d) => gensizevariants(d, 'mt', (size) => {
     return `margin-top: var(--spacing-${size});`;
+  }, {
+    dir: 'margin',
   }),
   (d) => gensizevariants(d, 'mb', (size) => {
     return `margin-bottom: var(--spacing-${size});`;
+  }, {
+    dir: 'margin',
   }),
 
   // Height
   (d) => gensizevariants(d, 'h', (size) => {
     return `height: var(--sizing-${size});`;
+  }, {
+    dir: 'height',
   }),
 
   // Width
   (d) => gensizevariants(d, 'w', (size) => {
     return `width: var(--sizing-${size});`;
+  }, {
+    dir: 'width',
   }),
 ];
 
@@ -228,15 +261,22 @@ async function generateCSS() {
 }
 
 async function start() {
-  await rm(BUILD_DIR, {
-    recursive: true,
-  })
-  await mkdir(BUILD_DIR);
-  await cp(path.join(SRC_DIR, 'styles'), path.join(BUILD_DIR, 'styles'), {
-    recursive: true,
-  });
+    try {
+      await rm(BUILD_DIR, {
+        recursive: true,
+      })
+    } catch  {
+      // NOOP
+    }
+    await mkdir(BUILD_DIR, {
+      recursive: true,
+    });
+    await cp(path.join(SRC_DIR, 'styles'), path.join(BUILD_DIR, 'styles'), {
+      recursive: true,
+    });
 
-  await generateCSS();
+    await generateCSS();
+
 }
 
 start();
