@@ -1,4 +1,5 @@
 .drac-avatar--no-border {
-  --avatar-border: 0;
-  box-shadow: var(--subtle-avatar-shadow);
+	--avatar-border: 0;
+
+	box-shadow: var(--subtle-avatar-shadow);
 }

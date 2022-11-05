@@ -1,38 +1,37 @@
 .drac-btn {
-  appearance: none;
-  border: none;
-  border-radius: var(--rounded-lg);
-  box-sizing: border-box;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-
-  padding: 0 var(--spacing-4);
-  line-height: var(--spacing-10);
-  height: var(--spacing-10);
-  min-width: var(--spacing-10);
-  font-size: var(--font-md);
+	appearance: none;
+	border: none;
+	border-radius: var(--rounded-lg);
+	box-sizing: border-box;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	padding: 0 var(--spacing-4);
+	line-height: var(--spacing-10);
+	height: var(--spacing-10);
+	min-width: var(--spacing-10);
+	font-size: var(--font-md);
 }
 
 .drac-btn:active,
 .drac-btn:focus {
-  opacity: 0.75;
-  box-shadow: -4px -4px 1px rgba(255, 255, 255, 0.3) inset;
-  outline: 0;
+	opacity: 0.75;
+	box-shadow: -4px -4px 1px rgb(255 255 255 / 30%) inset;
+	outline: 0;
 }
 
 .drac-btn:disabled {
-  background-color: var(--disabled);
-  cursor: not-allowed;
-  color: var(--black);
+	background-color: var(--disabled);
+	cursor: not-allowed;
+	color: var(--black);
 }
 
 .drac-btn:not(:disabled):hover {
-  opacity: 0.75;
-  box-shadow: 4px 4px rgba(255, 255, 255, 0.1);
+	opacity: 0.75;
+	box-shadow: 4px 4px rgb(255 255 255 / 10%);
 }
 
 .drac-btn:not(:disabled):disabled:hover {
-  box-shadow: none;
+	box-shadow: none;
 }

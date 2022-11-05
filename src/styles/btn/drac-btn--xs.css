@@ -1,7 +1,7 @@
 .drac-btn--xs {
-    padding: 0 var(--spacing-2);
-    line-height: var(--spacing-6);
-    height: var(--spacing-6);
-    min-width: var(--spacing-6);
-    font-size: var(--font-xs);
-  }
+	padding: 0 var(--spacing-2);
+	line-height: var(--spacing-6);
+	height: var(--spacing-6);
+	min-width: var(--spacing-6);
+	font-size: var(--font-xs);
+}

@@ -1,4 +1,4 @@
 .drac-list--unordered li::before {
-  content: "—";
-  padding-right: 10px;
+	content: "—";
+	padding-right: 10px;
 }

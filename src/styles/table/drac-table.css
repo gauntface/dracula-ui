@@ -1,20 +1,19 @@
 .drac-table {
-  border-collapse: collapse;
-  width: 100%;
-
-  border-color: var(--accentColor);
+	border-collapse: collapse;
+	width: 100%;
+	border-color: var(--accent-color);
 }
 
 .drac-table th {
-  font-weight: 500;
-  text-align: left;
-  text-transform: uppercase;
-  padding-bottom: .2rem;
+	font-weight: 500;
+	text-align: left;
+	text-transform: uppercase;
+	padding-bottom: 0.2rem;
 }
 
 .drac-table td {
-  border-color: var(--disabled);
-  border-width: 0.1rem;
-  border-style: solid;
-  padding: 0.5rem;
+	border-color: var(--disabled);
+	border-width: 0.1rem;
+	border-style: solid;
+	padding: 0.5rem;
 }
