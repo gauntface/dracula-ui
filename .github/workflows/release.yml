@@ -33,7 +33,7 @@ jobs:
 
     - name: Update package.json ⬆️
       run: npm version ${{ inputs.version }} --no-git-tag-version
-      # In case the version remains (i.e. re-run failed release)
+      # In case the version remains the same (i.e. re-run a failed release)
       continue-on-error: true
     - name: Commit any package.json changes 📌
       uses: stefanzweifel/git-auto-commit-action@v4
@@ -57,6 +57,8 @@ jobs:
       with:
         tag: v${{ inputs.version }}
         generateReleaseNotes: true
+        # In case the release exists (i.e. re-run a failed release)
+        allowUpdates: true
         artifacts: "dracula-ui-v${{ inputs.version }}.tar.gz"
 
     - name: Publish package on NPM 📦
