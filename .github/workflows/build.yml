@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build 🔧
 
 on:
   push:
@@ -20,9 +20,9 @@ jobs:
         submodules: true
 
     # Install dependencies
-    - name: Install NPM Deps
+    - name: Install NPM Deps 🌎
       run: npm install
-    - name: Lint
+    - name: Lint 🌟
       run: npm run lint
-    - name: Build
+    - name: Build 🔧
       run: npm run build

@@ -23,7 +23,6 @@ jobs:
     # Install dependencies
     - name: Install NPM Deps 🌎
       run: npm install
-
     - name: Lint 🌟
       run: npm run lint
     - name: Build 🔧
