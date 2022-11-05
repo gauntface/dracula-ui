@@ -41,6 +41,7 @@ jobs:
         mkdir release
         cp LICENSE release/
         cp package.json release/
+        cp README.md release/
         cd build && cp -r . ../release/
 
     - name: Create release on GitHub 📦
