@@ -10,12 +10,12 @@
   text-transform: uppercase;
 }
 
-.badge-subtle {
+.badge--subtle {
   border-width: var(--border-size);
   border-style: solid;
 }
 
-.badge-outline {
+.badge--outline {
   border-width: var(--border-size);
   border-style: solid;
   background-color: transparent;
