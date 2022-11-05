@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version (i.e. v1.0.1)'
+        description: 'Version (i.e. 1.0.1)'
         required: true
 
 concurrency:
@@ -30,7 +30,7 @@ jobs:
       run: npm run build
 
     - name: Update package.json
-      run: npm version ${{ inputs.version }}
+      run: npm version ${{ inputs.version }} --no-git-tag-version
     - name: Copy License
       run: cp LICENSE build/
     - name: Copy package.json
