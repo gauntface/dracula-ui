@@ -36,17 +36,10 @@ jobs:
         commit_message: "Releasing ${{ inputs.version }}"
         file_pattern: 'package.json'
 
-    - name: Copy License
-      run: cp LICENSE build/
-    - name: Copy package.json
-      run: cp package.json build/
-
-    - uses: actions/upload-artifact@v3
+    - name: GitHub Release
+      uses: ncipollo/release-action@v1
       with:
-        name: release
-        path: |
-          build/
-          LICENSE
-          package.json
-        retention-days: 1
+        tag: v${{ inputs.version }}
+        artifacts: LICENSE,package.json,build/
+        generateReleaseNotes: true,
 
