@@ -1,10 +1,11 @@
 import * as  path from 'path';
 import {writeFile, mkdir} from 'node:fs/promises';
-import {ALL_COLORS} from './config/colors.js';
 
-async function generateCSS(outdir, name, color, cssfn, opts) {
-  const selector = `drac-${name}-${color}`
-  const rules = cssfn(color);
+const SIZES = ['none', 'xxs', 'xs', 'sm', 'md', 'lg'];
+
+async function generateCSS(outdir, name, size, cssfn, opts) {
+  const selector = `drac-${name}-${size}`
+  const rules = cssfn(size);
   const css = `.${selector}${opts.suffix || ''} ${opts.selector || ''} {
   ${rules}
 }
@@ -18,7 +19,7 @@ export default async function generate(outdir, name, cssfn, opts = {}) {
     recursive: true,
   });
 
-  for (const c of ALL_COLORS) {
-    await generateCSS(bgdir, name, c, cssfn, opts);
+  for (const s of SIZES) {
+    await generateCSS(bgdir, name, s, cssfn, opts);
   }
 }

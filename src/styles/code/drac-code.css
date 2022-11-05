@@ -1,0 +1,7 @@
+.drac-code {
+	font-family: var(--default-font-family);
+	border-radius: var(--rounded-sm);
+	background: var(--purple-100);
+	color: var(--purple-900);
+	padding: 0.1rem 0.3rem;
+}

@@ -1,0 +1,4 @@
+.drac-select-sm {
+	height: var(--spacing-8);
+	font-size: var(--font-sm);
+}
