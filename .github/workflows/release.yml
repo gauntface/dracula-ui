@@ -45,14 +45,14 @@ jobs:
         cd build && cp -r . ../release/
 
     - name: Create tar for GitHub release 🤐
-      run: tar -zcvf dracula-ui-${{ inputs.version }}.tar.gz release/
+      run: tar -zcvf dracula-ui-v${{ inputs.version }}.tar.gz release/
 
     - name: Create release on GitHub 📦
       uses: ncipollo/release-action@v1
       with:
         tag: v${{ inputs.version }}
         generateReleaseNotes: true
-        artifacts: "dracula-ui-${{ inputs.version }}.tar.gz"
+        artifacts: "dracula-ui-v${{ inputs.version }}.tar.gz"
 
     - name: Publish package on NPM 📦
       run: |
