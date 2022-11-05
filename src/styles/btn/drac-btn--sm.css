@@ -1,0 +1,7 @@
+.drac-btn--sm {
+	padding: 0 var(--spacing-3);
+	line-height: var(--spacing-8);
+	height: var(--spacing-8);
+	min-width: var(--spacing-8);
+	font-size: var(--font-sm);
+}

@@ -1,0 +1,30 @@
+.drac-bg-animated {
+	content: "";
+	animation: animated-gradient 6s ease infinite alternate;
+	background-size: 300% 300%;
+	background-image:
+		linear-gradient(
+			var(--gradient-degree),
+			var(--orange),
+			var(--yellow),
+			var(--red),
+			var(--pink),
+			var(--purple),
+			var(--cyan),
+			var(--green)
+		);
+}
+
+@keyframes animated-gradient {
+	0% {
+		background-position: 0 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0 50%;
+	}
+}

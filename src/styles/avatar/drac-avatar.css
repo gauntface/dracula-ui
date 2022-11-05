@@ -1,0 +1,34 @@
+/** Defines an avatar */
+.drac-avatar {
+	--subtle-avatar-shadow: inset 0 0 0.5rem 0.5rem rgb(0 0 0 / 50%);
+	--avatar-border: 1px;
+
+	box-sizing: border-box;
+	border-radius: var(--rounded-full);
+	border-style: solid;
+	border-width: var(--avatar-border);
+	text-transform: uppercase;
+	height: 4.4rem;
+	width: 4.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.drac-avatar__background {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	box-sizing: border-box;
+	border-radius: var(--rounded-full);
+	display: "inline-block";
+	height: 100%;
+	width: 100%;
+}
+
+.drac-avatar .drac-text {
+	text-transform: uppercase;
+
+	/* Fira code is adding 1px to the bottom of the span */
+	transform: translateY(1px);
+}

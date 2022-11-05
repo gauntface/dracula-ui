@@ -1,0 +1,5 @@
+.drac-heading {
+	margin: 0;
+	font-size: var(--font-lg);
+	font-family: var(--default-font-family);
+}

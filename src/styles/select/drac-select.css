@@ -1,0 +1,72 @@
+.drac-select {
+	border-color: var(--accent-color);
+	border-radius: var(--rounded-lg);
+	background: var(--black-secondary);
+	border: 0.3rem solid transparent;
+	box-sizing: border-box;
+	color: var(--white);
+	transition: 0.3s ease-in-out all;
+	appearance: none;
+	outline: none;
+	position: relative;
+	width: 100%;
+	height: var(--spacing-10);
+	font-size: var(--font-md);
+	padding-left: var(--spacing-4);
+	padding-right: var(--spacing-8);
+	font-family: var(--default-font-family);
+}
+
+.drac-select::before {
+	border-style: solid;
+	border-width: 0.25rem 0.25rem 0 0;
+	content: "";
+	display: inline-block;
+	height: 0.45rem;
+	position: relative;
+	top: 0.15rem;
+	vertical-align: top;
+	width: 0.45rem;
+	left: 0;
+	transform: rotate(45deg);
+	background-color: white;
+}
+
+.drac-select:focus {
+	border-color: var(--white);
+}
+
+.drac-select::placeholder {
+	color: var(--black-ternary);
+}
+
+.drac-select:disabled {
+	background: var(--black-ternary);
+	color: var(--black);
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.drac-select__arrow {
+	position: absolute;
+	display: inline-flex;
+	width: var(--spacing-8);
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	right: var(--spacing-2);
+	top: 50%;
+	pointer-events: none;
+	z-index: 2;
+	transform: translateY(-50%);
+}
+
+.drac-select__arrow svg {
+	width: 3.6rem;
+	height: 3.6rem;
+	fill: currentcolor;
+}
+
+.drac-select:disabled + .drac-select__arrow {
+	color: var(--black);
+}

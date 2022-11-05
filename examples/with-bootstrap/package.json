@@ -1,7 +1,0 @@
-{
-  "name": "with-bootstrap",
-  "private": true,
-  "dependencies": {
-    "dracula-ui": "*"
-  }
-}

@@ -1,0 +1,4 @@
+.drac-avatar--subtle {
+	filter: grayscale(100%);
+	box-shadow: var(--subtle-avatar-shadow);
+}

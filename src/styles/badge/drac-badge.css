@@ -1,0 +1,11 @@
+.drac-badge {
+	padding: 1rem 1.5rem;
+	border: none;
+	border-radius: var(--rounded-lg);
+	text-transform: uppercase;
+	background-color: var(--accent-color);
+}
+
+.drac-badge .drac-text {
+	text-transform: uppercase;
+}
