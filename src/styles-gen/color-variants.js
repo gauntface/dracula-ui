@@ -3,9 +3,9 @@ import {writeFile, mkdir} from 'node:fs/promises';
 import {ALL_COLORS} from './config/colors.js';
 
 async function generateCSS(outdir, name, color, cssfn, opts) {
-  const selector = `drac-${name}-${color}`
+  const selector = `drac-${name}-${color}${opts.suffix || ''}`
   const rules = cssfn(color);
-  const css = `.${selector}${opts.suffix || ''} ${opts.selector || ''} {
+  const css = `.${selector} ${opts.selector || ''} {
   ${rules}
 }
 `;

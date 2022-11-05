@@ -3,8 +3,8 @@ import {writeFile, mkdir} from 'node:fs/promises';
 import {FROM_COLORS, TO_COLORS} from './config/colors.js';
 
 async function generateCSS(outdir, name, from, to, cssfn, opts) {
-  const selector = `drac-${name}-${from}-${to}`
-  const css = `.${selector}${opts.suffix || ''} ${opts.selector || ''} {
+  const selector = `drac-${name}-${from}-${to}${opts.suffix || ''}`
+  const css = `.${selector} ${opts.selector || ''} {
   ${cssfn(from, to)}
 }
 `;
