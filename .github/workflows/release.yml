@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version (i.e. v1.0.1)'
+        required: true
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    # Get the code
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+
+    # Install dependencies
+    - name: Install NPM Deps
+      run: npm install
+
+    - name: Lint
+      run: npm run lint
+    - name: Build
+      run: npm run build
+
+    - name: Update package.json
+      run: npm version ${{ inputs.version }}
+    - name: Copy License
+      run: cp LICENSE build/
+    - name: Copy package.json
+      run: cp package.json build/
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: release
+        path: |
+          build/
+          LICENSE
+          package.json
+        retention-days: 1
+
