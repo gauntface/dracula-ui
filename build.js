@@ -4,6 +4,7 @@ import gencolors from './src/styles-gen/colors.js';
 import gendisplay from './src/styles-gen/drac-d.js';
 import gencolorvariants from './src/styles-gen/color-variants.js';
 import gengradientvariants from './src/styles-gen/gradient-variants.js';
+import gensizevariants from './src/styles-gen/size-variants.js';
 
 const SRC_DIR = 'src';
 const BUILD_DIR = 'build';
@@ -11,21 +12,31 @@ const BUILD_DIR = 'build';
 const generators = [
   gencolors,
   gendisplay,
+
+  // Glow
   (d) => gencolorvariants(d, 'glow', (color) => {
     return `--glow-color: var(--${color});
   background-color: var(--glow-color);`;
   }),
+
+  // Border
   (d) => gencolorvariants(d, 'border', (color) => {
     return `border-color: var(--${color});`;
   }),
+
+  // Input
   (d) => gencolorvariants(d, 'input', (color) => {
     return `--input-border-color: var(--${color});`;
   }),
+
+  // List
   (d) => gencolorvariants(d, 'list', (color) => {
     return `color: var(--${color});`;
   }, {
     selector: `li::before`,
   }),
+
+  // Scrollbar
   (d) => gencolorvariants(d, 'scrollbar', (color) => {
     return `--drac-scrollbar-bg: transparent;
 --drac-scrollbar-border: var(--${color} -light);
@@ -33,6 +44,8 @@ const generators = [
 --drac-scrollbar-thumb-hover: var(--${color} -secondary);
 overflow: auto;`;
   }),
+
+  // Table
   (d) => gencolorvariants(d, 'table', (color) => {
     return `border-color: var(--${color});`;
   }, {
@@ -43,24 +56,21 @@ overflow: auto;`;
   }, {
     selector: 'tr:nth-child(even)',
   }),
-  (d) => gencolorvariants(d, 'text', (color) => {
-    return `color: var(--${color});`;
+
+  // Toggle
+  (d) => gencolorvariants(d, 'toggle', (color) => {
+    return `--active: var(--${color});
+    --focus: var(--${color}-secondary);
+    --border: var(--${color}-secondary);
+    --border-hover: var(--${color});`;
   }),
-  (d) => gencolorvariants(d, 'text', (color) => {
-    return `color: var(--${color}-secondary);`;
-  }, {
-    suffix: '-secondary',
+
+  // Select
+  (d) => gencolorvariants(d, 'select', (color) => {
+    return `--border-color: var(--${color});`;
   }),
-  (d) => gencolorvariants(d, 'text', (color) => {
-    return `color: var(--${color});`;
-  }, {
-    suffix: '--hover:hover',
-  }),
-  (d) => gencolorvariants(d, 'text', (color) => {
-    return `color: var(--${color}-secondary);`;
-  }, {
-    suffix: '-secondary--hover:hover',
-  }),
+
+  // Background
   (d) => gencolorvariants(d, 'bg', (color) => {
     return `background-color: var(--${color});`;
   }),
@@ -92,6 +102,38 @@ overflow: auto;`;
   }, {
     suffix: '-transparent',
   }),
+
+  // Tabs
+  (d) => gencolorvariants(d, 'tabs', (color) => {
+    return `background: var(--${color});
+		transform: scaleX(1);
+	}
+
+	.drac-tabs-${color} .drac-tab-active .drac-tab-link {
+		color: var(--${color});`;
+  }, {
+    selector: '.drac-tab-active:after',
+  }),
+
+  // Text
+  (d) => gencolorvariants(d, 'text', (color) => {
+    return `color: var(--${color});`;
+  }),
+  (d) => gencolorvariants(d, 'text', (color) => {
+    return `color: var(--${color}-secondary);`;
+  }, {
+    suffix: '-secondary',
+  }),
+  (d) => gencolorvariants(d, 'text', (color) => {
+    return `color: var(--${color});`;
+  }, {
+    suffix: '--hover:hover',
+  }),
+  (d) => gencolorvariants(d, 'text', (color) => {
+    return `color: var(--${color}-secondary);`;
+  }, {
+    suffix: '-secondary--hover:hover',
+  }),
   (d) => gengradientvariants(d, 'text', (from, to) => {
     return `background-image:
     linear-gradient(
@@ -113,6 +155,66 @@ overflow: auto;`;
   background-clip: text;`;
   }, {
     suffix: '--hover:hover',
+  }),
+
+  // Padding
+  (d) => gensizevariants(d, 'p', (size) => {
+    return `padding: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'px', (size) => {
+    return `padding-left: var(--spacing-${size});
+    padding-right: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'py', (size) => {
+    return `padding-top: var(--spacing-${size});
+    padding-bottom: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'pl', (size) => {
+    return `padding-left: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'pr', (size) => {
+    return `padding-right: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'pt', (size) => {
+    return `padding-top: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'pb', (size) => {
+    return `padding-bottom: var(--spacing-${size});`;
+  }),
+
+  // Margin
+  (d) => gensizevariants(d, 'm', (size) => {
+    return `margin: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'mx', (size) => {
+    return `margin-left: var(--spacing-${size});
+    margin-right: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'my', (size) => {
+    return `margin-top: var(--spacing-${size});
+    margin-bottom: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'ml', (size) => {
+    return `margin-left: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'mr', (size) => {
+    return `margin-right: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'mt', (size) => {
+    return `margin-top: var(--spacing-${size});`;
+  }),
+  (d) => gensizevariants(d, 'mb', (size) => {
+    return `margin-bottom: var(--spacing-${size});`;
+  }),
+
+  // Height
+  (d) => gensizevariants(d, 'h', (size) => {
+    return `height: var(--sizing-${size});`;
+  }),
+
+  // Width
+  (d) => gensizevariants(d, 'w', (size) => {
+    return `width: var(--sizing-${size});`;
   }),
 ];
 

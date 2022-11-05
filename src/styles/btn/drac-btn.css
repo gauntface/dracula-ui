@@ -12,6 +12,7 @@
 	height: var(--spacing-10);
 	min-width: var(--spacing-10);
 	font-size: var(--font-md);
+	font-family: var(--default-font-family);
 }
 
 .drac-btn:active,

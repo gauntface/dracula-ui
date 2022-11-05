@@ -7,7 +7,7 @@
   "author": "Netto Farah & Zeno Rocha & Matt Gaunt-Seo",
   "type": "module",
   "scripts": {
-    "build": "node build.js",
+    "build": "node build.js && npx stylelint 'build/**/*.css' --fix",
     "lint": "npx stylelint '**/*.css' --fix"
   },
   "devDependencies": {
