@@ -1,4 +1,4 @@
-name: Release
+name: Release 🚀
 
 on:
   workflow_dispatch:
@@ -21,32 +21,38 @@ jobs:
         submodules: true
 
     # Install dependencies
-    - name: Install NPM Deps
+    - name: Install NPM Deps 🌎
       run: npm install
 
-    - name: Lint
+    - name: Lint 🌟
       run: npm run lint
-    - name: Build
+    - name: Build 🔧
       run: npm run build
 
-    - name: Update package.json
+    - name: Update package.json ⬆️
       run: npm version ${{ inputs.version }} --no-git-tag-version
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: "Releasing ${{ inputs.version }}"
         file_pattern: 'package.json'
 
-    - name: Create Release Directory
+    - name: Create Release Directory 📂
       run: |
         mkdir release
         cp LICENSE release/
         cp package.json release/
         cd build && cp -r . ../release/
 
-    - name: GitHub Release
+    - name: Create release on GitHub 📦
       uses: ncipollo/release-action@v1
       with:
         tag: v${{ inputs.version }}
         artifacts: "release/**/*"
         generateReleaseNotes: true
 
+    - name: Publish package on NPM 📦
+      run: |
+        cd release
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
