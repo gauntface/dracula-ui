@@ -5,7 +5,7 @@ import {ALL_COLORS} from './config/colors.js';
 async function generateCSS(outdir, name, color, cssfn, opts) {
   const selector = `drac-${name}-${color}${opts.suffix || ''}`
   const rules = cssfn(color);
-  const css = `.${selector}${opts.state || ''} ${opts.selector || ''} {
+  const css = `${opts.prefix || ''}.${selector}${opts.state || ''} ${opts.selector || ''} {
   ${rules}
 }
 `;

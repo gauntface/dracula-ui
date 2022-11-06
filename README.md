@@ -19,8 +19,6 @@ There should be much of a difference beyond:
 
 1. There is no JS framework support, just plain CSS here.
 1. No single file to import all styles
-1. Naming is BEM convention
-1. You'll need to roll your own CSS minifier
 
 **For most people, this isn't the module for you**.
 

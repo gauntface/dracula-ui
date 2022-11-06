@@ -1,4 +1,4 @@
-.drac-select--outline {
+.drac-select-outline {
 	background: transparent;
 	border-color: var(--black-ternary);
 }
@@ -7,7 +7,7 @@
 	color: var(--white);
 }
 
-.drac-select--outline:disabled + .drac-select_arrow {
+.drac-select-outline:disabled + .drac-select_arrow {
 	color: var(--white);
 	opacity: 0.5;
 }
