@@ -1,10 +1,15 @@
-import { mkdir, rm, cp, stat } from 'node:fs/promises';
+import { mkdir, rm, cp, readFile, writeFile, rmdir } from 'node:fs/promises';
 import * as path from 'path';
 import gencolors from './src/styles-gen/colors.js';
 import gendisplay from './src/styles-gen/drac-d.js';
 import gencolorvariants from './src/styles-gen/color-variants.js';
 import gengradientvariants from './src/styles-gen/gradient-variants.js';
 import gensizevariants from './src/styles-gen/size-variants.js';
+
+import glob from 'glob';
+import postcssPresetEnv from 'postcss-preset-env';
+import postcss from 'postcss';
+import cssnano from 'cssnano';
 
 const SRC_DIR = 'src';
 const BUILD_DIR = 'build';
@@ -262,6 +267,26 @@ async function generateCSS() {
   await Promise.all(promises);
 }
 
+async function simplifyCSS() {
+  const varFiles = glob.sync(path.join(SRC_DIR, '**', 'variables', '*.css'));
+  const cssFiles = glob.sync(path.join(BUILD_DIR, '**', '*.css'));
+  const plugins = [
+    postcssPresetEnv({
+      preserve: false,
+      importFrom: varFiles,
+      autoprefixer: false,
+    }),
+    cssnano(),
+  ];
+
+  const processor = postcss(plugins);
+  for (const c of cssFiles) {
+    const css = await readFile(c);
+    const result = await processor.process(css, { from: c });
+    await writeFile(c, result.css);
+  }
+}
+
 async function start() {
     try {
       await rm(BUILD_DIR, {
@@ -276,8 +301,13 @@ async function start() {
     await cp(path.join(SRC_DIR, 'styles'), path.join(BUILD_DIR, 'styles'), {
       recursive: true,
     });
+    await rm(path.join(BUILD_DIR, 'styles', 'variables'), {
+      recursive: true,
+    })
 
     await generateCSS();
+
+    await simplifyCSS();
 
 }
 
