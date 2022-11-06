@@ -1,4 +1,4 @@
-.drac-badge--outline {
+.drac-badge.drac-badge-outline {
 	border-width: var(--border-size);
 	border-style: solid;
 	background-color: transparent;

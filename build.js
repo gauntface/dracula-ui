@@ -1,6 +1,6 @@
-import { mkdir, rm, cp, readFile, writeFile, rmdir } from 'node:fs/promises';
+import { mkdir, rm, cp, readFile, writeFile } from 'node:fs/promises';
 import * as path from 'path';
-import gencolors from './src/styles-gen/colors.js';
+import gencolorvars from './src/styles-gen/colors.js';
 import gendisplay from './src/styles-gen/drac-d.js';
 import gencolorvariants from './src/styles-gen/color-variants.js';
 import gengradientvariants from './src/styles-gen/gradient-variants.js';
@@ -15,7 +15,6 @@ const SRC_DIR = 'src';
 const BUILD_DIR = 'build';
 
 const generators = [
-  gencolors,
   gendisplay,
 
   // Glow
@@ -31,8 +30,9 @@ const generators = [
 
   // Input
   (d) => gencolorvariants(d, 'input', (color) => {
-    return `--input-border-color: var(--${color});`;
+    return `border-color: var(--${color});`;
   }, {
+    prefix: '.drac-input',
     state: ':focus'
   }),
 
@@ -270,6 +270,7 @@ async function generateCSS() {
 async function simplifyCSS() {
   const varFiles = glob.sync(path.join(SRC_DIR, '**', 'variables', '*.css'));
   const cssFiles = glob.sync(path.join(BUILD_DIR, '**', '*.css'));
+  varFiles.push({ customProperties: gencolorvars() });
   const plugins = [
     postcssPresetEnv({
       preserve: false,

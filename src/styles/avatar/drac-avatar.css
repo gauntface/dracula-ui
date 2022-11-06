@@ -1,12 +1,9 @@
 /** Defines an avatar */
 .drac-avatar {
-	--subtle-avatar-shadow: inset 0 0 0.5rem 0.5rem rgb(0 0 0 / 50%);
-	--avatar-border: 1px;
-
 	box-sizing: border-box;
 	border-radius: var(--rounded-full);
 	border-style: solid;
-	border-width: var(--avatar-border);
+	border-width: 1px;
 	text-transform: uppercase;
 	height: 4.4rem;
 	width: 4.5rem;
@@ -21,7 +18,7 @@
 	background-size: cover;
 	box-sizing: border-box;
 	border-radius: var(--rounded-full);
-	display: "inline-block";
+	display: inline-block;
 	height: 100%;
 	width: 100%;
 }

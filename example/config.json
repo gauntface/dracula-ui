@@ -1,0 +1,22 @@
+{
+  "disableHugoGeneratorInject": true,
+  "markup": {
+      "goldmark": {
+        "renderer": {
+            "unsafe": true
+        }
+      },
+      "highlight": {
+        "codeFences": false
+      }
+  },
+
+  "languageCode": "en-us",
+  "title": "@gauntface/dracula-ui",
+  "theme": ["dracula-ui", "styleguide", "base-theme"],
+
+  "params": {
+      "description": "Demo site for @gauntface/dracula-ui.",
+      "twittercreator": "@gauntface"
+  }
+}
