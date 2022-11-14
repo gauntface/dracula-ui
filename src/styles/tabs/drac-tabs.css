@@ -24,13 +24,13 @@
 	width: 100%;
 }
 
-.drac-tab__link {
+.drac-tab-link {
 	color: var(--disabled);
 	padding: var(--spacing-sm);
 	text-decoration: none;
 	transition: color 0.2s ease-in-out;
 }
 
-.drac-tab:hover .drac-tab__link {
+.drac-tab:hover .drac-tab-link {
 	color: var(--white);
 }
