@@ -150,7 +150,8 @@ overflow: auto;`;
       var(--${to}) 100%
     );
   background-size: 100%;
-  background-clip: text;`;
+  background-clip: text;
+  --webkit-background-clip: text;`;
   }),
   (d) => gengradientvariants(d, 'text', (from, to) => {
     return `background-image:
@@ -160,7 +161,8 @@ overflow: auto;`;
       var(--${to}) 100%
     );
   background-size: 100%;
-  background-clip: text;`;
+  background-clip: text;
+  --webkit-background-clip: text;`;
   }, {
     suffix: '--hover:hover',
   }),
