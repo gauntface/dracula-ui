@@ -15,24 +15,24 @@
 	font-family: var(--default-font-family);
 }
 
-.drac-btn:active,
-.drac-btn:focus {
+.drac-btn.drac-btn:active,
+.drac-btn.drac-btn:focus {
 	opacity: 0.75;
 	box-shadow: -4px -4px 1px rgb(255 255 255 / 30%) inset;
 	outline: 0;
 }
 
-.drac-btn:disabled {
+.drac-btn.drac-btn:disabled {
 	background-color: var(--disabled);
 	cursor: not-allowed;
 	color: var(--black);
 }
 
-.drac-btn:not(:disabled):hover {
+.drac-btn.drac-btn:not(:disabled):hover {
 	opacity: 0.75;
 	box-shadow: 4px 4px rgb(255 255 255 / 10%);
 }
 
-.drac-btn:not(:disabled):disabled:hover {
+.drac-btn.drac-btn:not(:disabled):disabled:hover {
 	box-shadow: none;
 }
